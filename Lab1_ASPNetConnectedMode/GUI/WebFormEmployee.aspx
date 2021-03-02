@@ -105,7 +105,7 @@
                     <asp:TextBox ID="tbLastName" runat="server"></asp:TextBox>
                 </td>
                 <td class="auto-style11">
-                    <asp:Button ID="btnDelete" runat="server" Text="Delete" Width="107px" />
+                    <asp:Button ID="btnDelete" runat="server" Text="Delete" Width="107px" OnClick="btnDelete_Click" />
                 </td>
             </tr>
             <tr>

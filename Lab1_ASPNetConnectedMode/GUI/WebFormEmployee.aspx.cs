@@ -72,5 +72,31 @@ namespace Lab1_ASPNetConnectedMode.GUI
                 MessageBox.Show("ID does not exist", "Error");
             }
         }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            Employee emp = new Employee();
+            if (!(EmployeeDB.IsDuplicateId(Convert.ToInt32(tbEmployeeId.Text))))
+            {
+                if (Validation.IsValidName(tbFirstName.Text) && Validation.IsValidName(tbLastName.Text))
+                {
+                    emp.EmployeeId = Convert.ToInt32(tbEmployeeId.Text);
+                    emp.FirstName = tbFirstName.Text;
+                    emp.LastName = tbLastName.Text;
+                    emp.JobTitle = tbJobType.Text;
+                    emp.DeleteEmployee(emp);
+                    MessageBox.Show("Data Deleted,Thanks", "Confirmation");
+                    tbEmployeeId.Text = tbFirstName.Text = tbLastName.Text = tbJobType.Text = null;
+                }
+                else
+                {
+                    MessageBox.Show("Enter Valid Name", "Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("ID does not exist", "Error");
+            }
+        }
     }
 }

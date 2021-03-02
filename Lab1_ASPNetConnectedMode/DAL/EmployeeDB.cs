@@ -139,5 +139,28 @@ namespace Lab1_ASPNetConnectedMode.DAL
                 conn.Dispose();
             }
         }
+
+        public static void DeleteRecord(Employee emp)
+        {
+            SqlConnection conn = UtilityDB.ConnectDB();
+            try
+            {
+                SqlCommand cmdDelete = new SqlCommand();
+                cmdDelete.CommandText = "DELETE FROM Employees WHERE EmployeeId = @EmployeeId";
+                cmdDelete.Connection = conn;
+                cmdDelete.Parameters.AddWithValue("@EmployeeId", emp.EmployeeId);
+                cmdDelete.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+            finally
+            {
+                conn.Close();
+                conn.Dispose();
+            }
+        }
     }
 }

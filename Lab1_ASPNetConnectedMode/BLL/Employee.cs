@@ -55,6 +55,10 @@ namespace Lab1_ASPNetConnectedMode.BLL
         {
             EmployeeDB.UpdateRecord(emp);
         }
+        public  void DeleteEmployee(Employee emp)
+        {
+            EmployeeDB.DeleteRecord(emp);
+        }
 
     }
 }
