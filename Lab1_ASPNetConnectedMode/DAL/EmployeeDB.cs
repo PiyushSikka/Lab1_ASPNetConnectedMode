@@ -162,5 +162,27 @@ namespace Lab1_ASPNetConnectedMode.DAL
                 conn.Dispose();
             }
         }
+
+        public static List<Employee> SearchRecords(int employeeId)
+        {
+            List<Employee> listEmp = new List<Employee>();
+            SqlConnection conn = UtilityDB.ConnectDB();
+            SqlCommand cmdSearch = new SqlCommand();
+            cmdSearch.CommandText = "SELECT * FROM EMPLOYEES WHERE EmployeeId = @EmployeeId";
+            cmdSearch.Parameters.AddWithValue("@EmployeeId", employeeId);
+            cmdSearch.Connection = conn;
+            SqlDataReader reader = cmdSearch.ExecuteReader();
+            Employee emp;
+            while (reader.Read())
+            {
+                emp = new Employee();
+                emp.EmployeeId = Convert.ToInt32(reader["EmployeeId"]);
+                emp.FirstName = reader["FirstName"].ToString();
+                emp.LastName = reader["LastName"].ToString();
+                emp.JobTitle = reader["JobTitle"].ToString();
+                listEmp.Add(emp);
+            }
+            return listEmp;
+        }
     }
 }

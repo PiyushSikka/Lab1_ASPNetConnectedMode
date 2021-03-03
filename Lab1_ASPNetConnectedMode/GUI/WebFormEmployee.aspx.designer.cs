@@ -150,22 +150,22 @@ namespace Lab1_ASPNetConnectedMode.GUI
         protected global::System.Web.UI.WebControls.Label Label6;
 
         /// <summary>
-        /// DropDownList1 control.
+        /// ddlSearchList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSearchList;
 
         /// <summary>
-        /// TextBox1 control.
+        /// tbSearchInput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox tbSearchInput;
 
         /// <summary>
         /// btnSearch control.

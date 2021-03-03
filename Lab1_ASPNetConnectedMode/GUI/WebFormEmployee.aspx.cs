@@ -98,5 +98,14 @@ namespace Lab1_ASPNetConnectedMode.GUI
                 MessageBox.Show("ID does not exist", "Error");
             }
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            Employee emp = new Employee();
+            gvEmployee.DataSource = emp.getEmployeeInfo(Convert.ToInt32(tbSearchInput.Text));
+              
+            gvEmployee.DataBind();
+           
+        }
     }
 }

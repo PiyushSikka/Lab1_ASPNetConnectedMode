@@ -60,5 +60,10 @@ namespace Lab1_ASPNetConnectedMode.BLL
             EmployeeDB.DeleteRecord(emp);
         }
 
+        public List<Employee> getEmployeeInfo(int employeeId)
+        {
+            return EmployeeDB.SearchRecords(employeeId); ;
+        }
+
     }
 }

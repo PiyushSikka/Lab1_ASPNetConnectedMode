@@ -59,6 +59,10 @@
             left: 2px;
             z-index: 1;
         }
+        .auto-style13 {
+            width: 267px;
+            margin-left: 40px;
+        }
     </style>
 </head>
 <body style="z-index: 1; width: 1014px; height: 228px; position: absolute; top: 0px; left: 0px">
@@ -128,15 +132,18 @@
                 <td class="auto-style5">
                     <asp:Label ID="Label6" runat="server" Text="Search By"></asp:Label>
                 </td>
-                <td class="auto-style10">
-                    <asp:DropDownList ID="DropDownList1" runat="server" Width="239px">
+                <td class="auto-style13">
+                    <asp:DropDownList ID="ddlSearchList" runat="server" Width="239px">
+                        <asp:ListItem>EmployeeId</asp:ListItem>
+                        <asp:ListItem>FirstName</asp:ListItem>
+                        <asp:ListItem>LastName</asp:ListItem>
                     </asp:DropDownList>
                 </td>
                 <td class="auto-style11">
-                    <asp:TextBox ID="TextBox1" runat="server" Width="210px"></asp:TextBox>
+                    <asp:TextBox ID="tbSearchInput" runat="server" Width="210px"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:Button ID="btnSearch" runat="server" Text="Search" Width="104px" />
+                    <asp:Button ID="btnSearch" runat="server" Text="Search" Width="104px" OnClick="btnSearch_Click" />
                 </td>
             </tr>
         </table>
